@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Inmobiliaria</title>
+    <style>
+        /* Estilos generales */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Estilos para la isla flotante */
+        .social-floating-island {
+            position: fixed;
+            top: 50%; /* Centrar verticalmente */
+            right: -80px;
+            transform: translateY(-50%);
+            background-color: #f2f2f2;
+            padding: 10px;
+            box-shadow: -2px 0 4px rgba(0, 0, 0, 0.411);
+            z-index: 1000; /* Asegura que esté por encima del contenido */
+            border-radius: 20px;
+            transition: right 0.3s ease; /* Animación de desplazamiento */
+        }
+
+        /* Estilos para los enlaces de las redes sociales */
+        .social-floating-island a {
+            display: block;
+            margin: 5px;
+            text-decoration: none;
+        }
+
+        /* Estilos de las imágenes de las redes sociales */
+        .social-floating-island img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            box-shadow: -2px 0 4px rgba(0, 0, 0, 0.411);
+            
+
+            
+        }
+
+        /* Estilos para la flecha de mostrar/ocultar */
+        .toggle-arrow {
+            position: fixed;
+            top: 50%;
+            right: 0; /* Ajustado para que esté pegado a la isla */
+            transform: translateY(-50%);
+            background-color: #f2f2f2;
+            padding: 5px;
+            border-radius: 0 10px 10px 0; /* Ajustado para que la flecha esté en el lado derecho */
+            box-shadow: -2px 0 4px rgba(0, 0, 0, 0.185);
+            cursor: pointer;
+            z-index: 1001; /* Asegura que esté sobre la isla flotante */
+        }
+    </style>
+</head>
+<body>
+    <div class="social-floating-island">
+        <!-- Enlace de Facebook -->
+        <a href="fb://page/salesinmobiliaria" target="_blank">
+            <img src="iconos/face.jpg" alt="Página de Facebook">
+        </a>
+        <!-- Enlace de Instagram -->
+        <a href="https://www.instagram.com/TUPAGINA" target="_blank">
+            <img src="iconos/insta.jpg" alt="Página de Instagram">
+        </a>
+
+        <!-- Enlace a un perfil de Twitter -->
+        <a href="https://twitter.com/TUUSUARIO" target="_blank">
+            <img src="iconos/twitter.jpeg" alt="Perfil de Twitter">
+        </a>
+
+        <!-- Enlace a un perfil o video de TikTok -->
+        <a href="https://www.tiktok.com/@TUPERFIL" target="_blank">
+            <img src="iconos/tiktok1.png" alt="Perfil o video de TikTok">
+        </a>
+    
+    </div>
+    
+    <!-- Flecha de mostrar/ocultar -->
+    <div class="toggle-arrow" id="toggleArrow">&#10148;</div>
+
+    <script>
+        const socialFloatingIsland = document.querySelector('.social-floating-island');
+        const toggleArrow = document.getElementById('toggleArrow');
+        let islandVisible = true;
+
+        // Mostrar u ocultar la isla flotante al hacer clic en la flecha
+        toggleArrow.addEventListener('click', () => {
+            if (islandVisible) {
+                socialFloatingIsland.style.right = '-80px';
+                toggleArrow.style.right= '0'; // Mueve la flecha 10px a la izquierda
+            } else {
+                socialFloatingIsland.style.right = '0';
+                toggleArrow.style.right = '60px'; // Restaura la posición original de la flecha
+            }
+            islandVisible = !islandVisible;
+        });
+    </script>
+
+<div id="cookie-banner" style="display: none;">
+    <p>¡Hola! 🍪 Utilizamos cookies para asegurarnos de que tengas la mejor experiencia en nuestro sitio web. Al aceptar, nos ayudas a mejorar nuestros servicios y personalizar tu navegación. Puedes conocer más en nuestra <a href="#">Política de Cookies</a>.</p>
+        <p>No te preocupes, no compartimos tus datos y respetamos tu privacidad. Si aceptas, guardaremos una pequeña cookie para recordar tu elección y no volver a molestarte. ¡Gracias por tu confianza! 🧡</p>
+        <button id="btn-aceptar">Aceptar</button>
+        <button id="btn-rechazar">Rechazar</button>
+</div>
+<style>
+    #cookie-banner {
+    display: none;
+    background-color: #3d9a66;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 20px auto;
+    max-width: 80%;
+    animation: fadeIn 0.5s ease-in-out;
+    z-index: 900;
+}
+
+#cookie-banner p {
+    margin: 0 0 10px 0;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Resto de los estilos */
+body {
+    font-family: Arial, sans-serif;
+}
+#btn-aceptar, #btn-rechazar {
+    background-color: #ff7043;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+</style>
+</body>
+</html>
